@@ -33,6 +33,7 @@ $mydirnumber = $regs[2] === '' ? '' : intval( $regs[2] ) ;
 
 $modversion['name'] = _ALBM_MYALBUM_NAME . $mydirnumber ;
 $modversion['version'] = 2.89 ;
+$modversion['detailed_version'] = '2.89.1' ;
 $modversion['description'] = _ALBM_MYALBUM_DESC;
 $modversion['author'] = "GIJ=CHECKMATE<br />PEAK Corp.(http://www.peak.ne.jp/)" ;
 $modversion['credits'] = "Original: Daniel Branco<br />(http://bluetopia.homeip.net)<br />Kazumi Ono<br />(http://www.mywebaddons.com/)<br />The XOOPS Project" ;
