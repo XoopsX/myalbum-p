@@ -8,7 +8,7 @@ function display_edit_form( $cat_array , $form_title , $action )
 {
 	global $cattree ;
 
-	$myts =& MyTextSanitizer::getInstance();
+	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
 
 	extract( $cat_array ) ;
 
@@ -48,7 +48,7 @@ function display_edit_form( $cat_array , $form_title , $action )
 
 function mysql_get_sql_set( $cols )
 {
-	$myts =& MyTextSanitizer::getInstance();
+	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
 
 	$ret = "" ;
 
@@ -144,7 +144,7 @@ $disp = isset( $_GET[ 'disp' ] ) ? $_GET[ 'disp' ] : '' ;
 $cid = isset( $_GET[ 'cid' ] ) ? intval( $_GET[ 'cid' ] ) : 0 ;
 
 // Initializations
-$myts =& MyTextSanitizer::getInstance();
+(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
 $cattree = new XoopsTree( $table_cat , "cid" , "pid" ) ;
 
 

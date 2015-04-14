@@ -10,7 +10,7 @@ if( !class_exists('myalbumD3commentContent') )
 		function fetchSummary( $external_link_id )
 		{
 			$db =& Database::getInstance() ;
-			$myts =& MyTextSanitizer::getInstance();
+			(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
 
 			$module_handler =& xoops_gethandler( 'module' ) ;
 			$module =& $module_handler->getByDirname( $this->mydirname ) ;

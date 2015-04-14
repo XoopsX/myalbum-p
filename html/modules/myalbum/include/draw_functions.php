@@ -145,7 +145,7 @@ function myalbum_get_array_for_photo_assign_light( $fetched_result_array , $summ
 	global $photos_url , $thumbs_url , $thumbs_dir ;
 	global $myalbum_makethumb , $myalbum_thumbsize , $myalbum_normal_exts ;
 
-	$myts =& MyTextSanitizer::getInstance() ;
+	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance() ;
 
 	extract( $fetched_result_array ) ;
 
@@ -194,7 +194,7 @@ function myalbum_get_sub_categories( $parent_id , $cattree )
 {
 	global $xoopsDB , $table_cat ;
 
-	$myts =& MyTextSanitizer::getInstance() ;
+	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance() ;
 
 	$ret = array() ;
 

@@ -5,7 +5,7 @@
 // ------------------------------------------------------------------------- //
 
 include "header.php" ;
-$myts =& MyTextSanitizer::getInstance() ; // MyTextSanitizer object
+(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance() ; // MyTextSanitizer object
 include_once XOOPS_ROOT_PATH."/class/xoopstree.php" ;
 $cattree = new XoopsTree( $table_cat , "cid" , "pid" ) ;
 
@@ -115,12 +115,12 @@ if( $numrows > 1 ) {
 $xoopsTpl->assign( 'photo_nav' , $photo_nav ) ;
 
 // comments
-        // ¥â¥¸¥å¡¼¥ëID  // added by naao
+        // ï¿½â¥¸ï¿½å¡¼ï¿½ï¿½ID  // added by naao
         $module_handler =& xoops_gethandler('module');
         $this_module =& $module_handler->getByDirname($mydirname);
         $mid = $this_module->getVar('mid');
  
-        // ¥â¥¸¥å¡¼¥ëconfig  // added by naao
+        // ï¿½â¥¸ï¿½å¡¼ï¿½ï¿½config  // added by naao
         $config_handler =& xoops_gethandler("config");
         $mod_config = $config_handler->getConfigsByCat(0, $mid);
         $xoopsTpl->assign("moduleConfig", $mod_config);

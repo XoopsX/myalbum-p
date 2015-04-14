@@ -4,7 +4,7 @@
 //                        <http://www.peak.ne.jp/>                           //
 // ------------------------------------------------------------------------- //
 include "header.php" ;
-$myts =& MyTextSanitizer::getInstance() ;
+(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance() ;
 
 if( ! ( $global_perms & GPERM_RATEVOTE ) ) {
 	redirect_header(XOOPS_URL.'/index.php', 1, _NOPERM);

@@ -41,7 +41,7 @@ if (is_object($xoopsUser)) {
 }
 
 
-$myts =& MyTextSanitizer::getInstance();	// MyTextSanitizer object
+(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();	// MyTextSanitizer object
 $cattree = new XoopsTree( $table_cat , "cid" , "pid" ) ;
 
 // Get variables

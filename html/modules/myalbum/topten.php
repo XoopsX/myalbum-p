@@ -5,7 +5,7 @@
 // ------------------------------------------------------------------------- //
 
 include("header.php");
-$myts =& MyTextSanitizer::getInstance() ; // MyTextSanitizer object
+(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance() ; // MyTextSanitizer object
 include_once( XOOPS_ROOT_PATH."/class/xoopstree.php" ) ;
 $cattree = new XoopsTree( $table_cat , "cid" , "pid" ) ;
 

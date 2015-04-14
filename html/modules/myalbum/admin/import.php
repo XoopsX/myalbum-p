@@ -9,7 +9,7 @@ include_once XOOPS_ROOT_PATH.'/modules/system/constants.php' ;
 
 // GPCS vars
 
-$myts =& MyTextSanitizer::getInstance() ;
+(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance() ;
 
 // reject Not Admin
 if( ! $isadmin ) {

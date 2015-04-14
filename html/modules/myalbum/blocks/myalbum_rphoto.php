@@ -41,7 +41,7 @@ function b_myalbum_rphoto_show( $options )
 	$whr_ext = "1" ;
 
 	$block = array() ;
-	$myts =& MyTextSanitizer::getInstance() ;
+	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance() ;
 
 	// Get number of photo 
 	$result = $xoopsDB->query( "SELECT count(l.lid) FROM $table_photos l WHERE status>0 AND $whr_cat AND $whr_ext" ) ;
