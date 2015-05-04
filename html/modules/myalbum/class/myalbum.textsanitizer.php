@@ -32,7 +32,7 @@ class MyAlbumTextSanitizer extends MyTextSanitizer {
      * @static
      * @staticvar   object
 	 */
-	function &getInstance()
+	public static function &sGetInstance()
 	{
 		static $instance;
 		if (!isset($instance)) {
@@ -40,7 +40,11 @@ class MyAlbumTextSanitizer extends MyTextSanitizer {
 		}
 		return $instance;
 	}
-
+	function &getInstance()
+	{
+		$instance =& self::sGetInstance();
+		return $instance;
+	}
 	/**
 	 * Filters textarea form data in DB for display
 	 *
@@ -153,7 +157,7 @@ class MyAlbumTextSanitizer extends MyTextSanitizer {
     *
     * @return	string
 	*/
-	function stripSlashesGPC($text)
+	function &stripSlashesGPC($text)
 	{
 		if (get_magic_quotes_gpc()) {
 			$text = stripslashes($text);

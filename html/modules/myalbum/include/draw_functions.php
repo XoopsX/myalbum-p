@@ -58,7 +58,7 @@ function myalbum_get_array_for_photo_assign( $fetched_result_array , $summary = 
 
 	include_once( "$mod_path/class/myalbum.textsanitizer.php" ) ;
 
-	$myts =& MyAlbumTextSanitizer::getInstance() ;
+	$myts =& MyAlbumTextSanitizer::sGetInstance() ;
 
 	extract( $fetched_result_array ) ;
 

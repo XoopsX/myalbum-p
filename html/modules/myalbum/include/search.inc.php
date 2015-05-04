@@ -60,7 +60,7 @@ function myalbum_search_base( $mydirname , $keywords , $andor , $limit , $offset
 	$ret = array() ;
 	$context = '' ;
 	include_once XOOPS_ROOT_PATH."/modules/$mydirname/class/myalbum.textsanitizer.php" ;
-	$myts =& MyAlbumTextSanitizer::getInstance();
+	$myts =& MyAlbumTextSanitizer::sGetInstance();
 	while( $myrow = $xoopsDB->fetchArray($result) ) {
 
 		// get context for module "search"

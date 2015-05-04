@@ -9,7 +9,7 @@ include_once XOOPS_ROOT_PATH . '/class/xoopstree.php' ;
 include_once 'class/myuploader.php' ;
 include_once 'class/myalbum.textsanitizer.php' ;
 
-$myts =& MyAlbumTextSanitizer::getInstance() ;
+$myts =& MyAlbumTextSanitizer::sGetInstance() ;
 $cattree = new XoopsTree( $table_cat , 'cid' , 'pid' ) ;
 
 $lid = empty( $_GET['lid'] ) ? 0 : intval( $_GET['lid'] ) ;

@@ -12,7 +12,7 @@ include_once '../class/myalbum.textsanitizer.php' ;
 
 // initialization of Xoops vars
 $cattree = new XoopsTree( $table_cat , "cid" , "pid" ) ;
-$myts =& MyAlbumTextSanitizer::getInstance() ;
+$myts =& MyAlbumTextSanitizer::sGetInstance() ;
 
 
 // GET vars
